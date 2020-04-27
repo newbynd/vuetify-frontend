@@ -9,8 +9,10 @@
       floating="true"
       app
       dark
+      expand-on-hover="true"
     >
-      <v-list
+        <div>
+          <v-list
           dense
           nav
           class="py-0"
@@ -19,14 +21,15 @@
             <v-list-item-avatar>
               <img src="https://randomuser.me/api/portraits/men/81.jpg">
             </v-list-item-avatar>
-
             <v-list-item-content>
               <v-list-item-title>Néstor</v-list-item-title>
               <v-list-item-subtitle>Romero</v-list-item-subtitle>
             </v-list-item-content>
           </v-list-item>
 
+
           <v-divider></v-divider>
+
 
           <v-list-item
             v-for="item in items"
@@ -41,14 +44,38 @@
               <v-list-item-title>{{ item.title }}</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
+          <v-divider></v-divider>
         </v-list>
+        </div>
+
+  
+        <div>
+          <v-list dense nav class="py-0" shaped>
+          <v-list-item
+            v-for="network in networks"
+            :key="network.title"
+            link
+            class="my-2"
+          >
+            <v-list-item-icon>
+              <v-icon>{{ network.icon }}</v-icon>
+            </v-list-item-icon>
+
+            <v-list-item-content>
+              <v-list-item-title>{{ network.title }}</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </v-list>
+        </div>       
+
     </v-navigation-drawer>
 
     <v-app-bar
       color="teal darken-1"
-      dense
       dark 
       class="d-lg-none"
+      app
+      inverted-scroll="false"
     >
       <v-app-bar-nav-icon></v-app-bar-nav-icon>
 
@@ -90,9 +117,10 @@
       </v-menu>
     </v-app-bar>
 
-    <v-content class="grey darken-1" style="padding: 0px, 0px, 0px, 256px;">
+    <v-content class="grey darken-4" style="padding: 0px, 0px, 0px, 256px;">
       <router-view/>
     </v-content>
+  
   </v-app>
 </template>
 
@@ -103,10 +131,16 @@ export default {
   data: () => ({
       
       items: [
-          { title: 'Dashboard', icon: 'mdi-view-dashboard' },
-          { title: 'Photos', icon: 'mdi-image' },
-          { title: 'About', icon: 'mdi-help-box' },
-        ],
+        { title: 'Extracto', icon: 'mdi-account-card-details' },
+        { title: 'Experiencia', icon: 'mdi-tie' },
+        { title: 'Formación', icon: 'mdi-school' },
+        { title: 'Certificados', icon: 'mdi-certificate' },
+      ],
+      networks: [
+        { title: 'Email', icon: 'mdi-email' },
+        { title: 'Linkedin', icon: 'mdi-linkedin-box' },
+        { title: 'GitHub', icon: 'mdi-github-circle' },
+      ],
     }),
 };
 </script>
