@@ -49,18 +49,18 @@
 
 <!-- TIMELINE-->
       <v-row>
-        <v-col class="py-0 px-0" justify="center" align="center" cols="12" style="height: 100vh;">
-            <div class="mx-10 my-10">
-    <v-timeline style="max-width: 1000px;">
+        <v-col class="py-0 px-0" justify="center" align="center" cols="12" style="height: auto; ">
+            <div class="mx-10 my-10" id="top">
+    <v-timeline style="max-width: 1000px;" light>
       <v-timeline-item
-        v-for="n in 3"
+        v-for="n in 5"
         :key="n"
         icon-color= "teal accent-3"
         small="true"
         color="teal"
       >
         <span slot="opposite" class="white--text">2019</span>
-        <v-card class="elevation-2">
+        <v-card elevation="10" hover="true" light>
           <v-card-title class="headline">Lorem ipsum</v-card-title>
           <v-card-text>
             Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit, an vim zril disputando voluptatibus, vix an salutandi sententiae.
@@ -82,5 +82,6 @@
 </script>
 
 <style>
+
 
 </style>

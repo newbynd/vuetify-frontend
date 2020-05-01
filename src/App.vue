@@ -35,6 +35,7 @@
             v-for="item in items"
             :key="item.title"
             link
+
           >
             <v-list-item-icon>
               <v-icon>{{ item.icon }}</v-icon>
@@ -117,7 +118,7 @@
       </v-menu>
     </v-app-bar>
 
-    <v-content class="grey darken-4" style="padding: 0px, 0px, 0px, 256px;">
+    <v-content class="hiii" style="padding: 0px, 0px, 0px, 256px;">
       <router-view/>
     </v-content>
   
@@ -131,10 +132,10 @@ export default {
   data: () => ({
       
       items: [
-        { title: 'Extracto', icon: 'mdi-account-card-details' },
-        { title: 'Experiencia', icon: 'mdi-tie' },
-        { title: 'Formación', icon: 'mdi-school' },
-        { title: 'Certificados', icon: 'mdi-certificate' },
+        { title: 'Extracto', icon: 'mdi-account-card-details', targett: "#fir" },
+        { title: 'Experiencia', icon: 'mdi-tie', targett: "2" },
+        { title: 'Formación', icon: 'mdi-school', targett: "3" },
+        { title: 'Certificados', icon: 'mdi-certificate', targett: "4" },
       ],
       networks: [
         { title: 'Email', icon: 'mdi-email' },
@@ -144,3 +145,12 @@ export default {
     }),
 };
 </script>
+
+<style>
+  .hiii {
+    background: #43cea2;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #185a9d, #43cea2);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #185a9d, #43cea2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  }
+</style>
